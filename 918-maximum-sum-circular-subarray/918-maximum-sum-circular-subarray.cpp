@@ -16,8 +16,6 @@ public:
         int max_sum = maxSubarray(nums);
         transform(nums.begin(), nums.end(), nums.begin(), bind1st(std::multiplies<int>(), -1));
         int min_sum = maxSubarray(nums)*-1;
-        cout<<"mx sum"<<max_sum<<"\n";
-        cout<<"min sum"<<min_sum;
         return max_sum>0? max(max_sum, (sum_arr - min_sum)): max_sum;
     }
 };
